@@ -1,3 +1,5 @@
+import 'package:animation/screen/login/widgets/form_container.dart';
+import 'package:animation/screen/login/widgets/sign_up_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -36,6 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     FormContainer(),
+                    SignUpButton(),
                   ],
                 ),
               ],
