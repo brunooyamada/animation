@@ -7,9 +7,61 @@ class HomeTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('')),
-      body: Container(),
+    final screenSize = MediaQuery.of(context).size;
+
+    return Container(
+      height: screenSize.height * 0.4,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/background.jpg"),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const Text(
+              "Bem-vindo Daniel!",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w300,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              alignment: Alignment.topRight,
+              width: containerGrow.value * 120,
+              height: containerGrow.value * 120,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage("images/perfil.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Container(
+                width: containerGrow.value * 35,
+                height: containerGrow.value * 35,
+                margin: EdgeInsets.only(left: 80),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color.fromRGBO(80, 210, 194, 1.0),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "2",
+                  style: TextStyle(
+                    fontSize: containerGrow.value * 15,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
